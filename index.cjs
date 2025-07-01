@@ -1,4 +1,3 @@
-// index.cjs
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -79,7 +78,10 @@ app.post('/api/obfuscate', (req, res) => {
   try {
     const options = getOptions();
     const result = JavaScriptObfuscator.obfuscate(code, options);
-    const obfuscatedCode = "// Veronica obfuscator developed by terrizev\n" + result.getObfuscatedCode();
+    const obfuscatedCode = `// Veronica obfuscator developed by Terrizev 
+// just deploybro nothing to change😂😏
+// contact me for script +256784670936,+254784937112\n\n` + 
+result.getObfuscatedCode();
     
     res.json({ 
       success: true,
@@ -116,7 +118,7 @@ app.listen(port, () => {
     ╚═══╝  ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝
                                                                           
   Server running on http://localhost:${port}
-  WhatsApp: +256 784 670936
+  WhatsApp: +256 784 670936, +254 784 937112
   GitHub: Terrizev
   WhatsApp Channel: https://whatsapp.com/channel/0029Vb57ZHh7IUYcNttXEB3y
   `);
