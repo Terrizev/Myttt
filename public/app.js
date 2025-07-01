@@ -72,7 +72,10 @@ form.onsubmit = async function(event) {
     });
 
     // Add attribution and get obfuscated code
-    lastObfuscatedCode = "// Veronica obfuscator developed by Terrizev \n// just deploybro nothing to change😂😏\n//ok contact me i for script +256784670936\n" + obfuscationResult.getObfuscatedCode();
+    lastObfuscatedCode = `// Veronica obfuscator developed by Terrizev 
+// just deploybro nothing to change😂😏
+// contact me for script +256784670936,+254784937112\n\n` + 
+obfuscationResult.getObfuscatedCode();
     output.value = lastObfuscatedCode;
 
     // Switch to results view
