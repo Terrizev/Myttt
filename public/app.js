@@ -7,6 +7,9 @@ const output = document.getElementById("output");
 const obfuscateAnotherCode = document.getElementById("obfuscateAnotherCode");
 const copyBtn = document.getElementById("copyBtn");
 const securityLevelButtons = document.querySelectorAll(".security-level-btn");
+const darkModeToggle = document.getElementById("darkModeToggle");
+const uploadBtn = document.getElementById("uploadBtn");
+const fileInput = document.getElementById("fileInput");
 
 // State
 let currentSecurityLevel = "medium";
@@ -69,7 +72,7 @@ form.onsubmit = async function(event) {
     });
 
     // Add attribution and get obfuscated code
-    lastObfuscatedCode = "// Veronica obfuscator developed by terrizev\n" + obfuscationResult.getObfuscatedCode();
+    lastObfuscatedCode = "// Veronica obfuscator developed by Terrizev \n// just deploybro nothing to change😂😏\n//ok contact me i for script +256784670936\n" + obfuscationResult.getObfuscatedCode();
     output.value = lastObfuscatedCode;
 
     // Switch to results view
@@ -122,7 +125,7 @@ function getObfuscationOptions(domainLockArray) {
       deadCodeInjection: true,
       deadCodeInjectionThreshold: 0.4,
       debugProtection: true,
-      debugProtectionInterval: 2000, // Fixed: now a number value
+      debugProtectionInterval: 2000,
       disableConsoleOutput: true,
       selfDefending: true,
       stringArrayEncoding: ['rc4'],
@@ -196,6 +199,38 @@ function logObfuscationEvent(level, domainCount) {
     });
   }
 }
+
+// Dark Mode Toggle
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    darkModeToggle.innerHTML = isDarkMode 
+        ? '<i class="fas fa-sun text-white"></i>' 
+        : '<i class="fas fa-moon text-white"></i>';
+    
+    // Save preference
+    localStorage.setItem('darkMode', isDarkMode);
+});
+
+// Check for saved dark mode preference
+if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+    darkModeToggle.innerHTML = '<i class="fas fa-sun text-white"></i>';
+}
+
+// File Upload Functionality
+uploadBtn.addEventListener('click', () => fileInput.click());
+
+fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = (event) => {
+        javascriptCode.value = event.target.result;
+    };
+    reader.readAsText(file);
+});
 
 // Initialize
 updateSecurityDescription();
