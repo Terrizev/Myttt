@@ -1,13 +1,13 @@
 {
   "name": "veronica-obfuscator",
-  "version": "1.0.2",
-  "description": "Professional JavaScript obfuscation tool with domain locking, multi-level security, dark mode, and file upload",
+  "version": "1.0.1",
+  "description": "Professional JavaScript obfuscation tool with domain locking and multi-level security",
   "main": "index.cjs",
-  "type": "commonjs",
   "scripts": {
     "start": "node index.cjs",
     "dev": "nodemon index.cjs",
-    "test": "echo \"Error: no tests configured\" && exit 0"
+    "test": "echo \"Error: no tests configured\" && exit 0",
+    "check-paths": "node -e \"require('fs').accessSync('public/index.html'); console.log('✓ Paths valid')\""
   },
   "engines": {
     "node": ">=16.0.0",
@@ -18,12 +18,9 @@
     "obfuscator",
     "security",
     "veronica",
-    "code-protection",
-    "dark-mode",
-    "file-upload",
-    "commonjs"
+    "code-protection"
   ],
-  "author": "Terrizev <terrizev@gmail.com>",
+  "author": "Your Name <your.email@example.com>",
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
@@ -37,13 +34,5 @@
   "files": [
     "public/",
     "index.cjs"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Terrizev/Myttt.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Terrizev/Myttt/issues"
-  },
-  "homepage": "https://github.com/Terrizev/Myttt#readme"
+  ]
 }
