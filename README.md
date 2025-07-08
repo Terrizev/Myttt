@@ -22,8 +22,8 @@ Professional-grade JavaScript obfuscation tool with domain locking, multi-level 
 
 ## Live Demo 🌐
 
-Try Veronica Obfuscator now: [https://veronica-obfuscator.example.com](https://myttt-tau.vercel.app/)  
-*(Replace with your actual deployment URL)*
+Try Veronica Obfuscator )  
+*(https://veronica-obfuscator.vercel.app/)*
 
 ## Installation 🚀
 
